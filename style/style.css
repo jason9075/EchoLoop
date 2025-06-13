@@ -56,3 +56,36 @@ select {
 ul {
   padding-left: 1rem;
 }
+
+.transcript-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+#transcript {
+  height: 300px;
+  width: 100%;
+  background: var(--nord1);
+  color: var(--nord4);
+  border: none;
+  padding: 1rem;
+  resize: vertical;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+#clearTranscript {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(--nord4);
+  opacity: 0.6;
+}
+
+#clearTranscript:hover {
+  opacity: 1;
+}

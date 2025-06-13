@@ -15,8 +15,10 @@
         <input type="file" id="audioFile" accept="audio/mp3,audio/mpeg" />
 
         <label>📜 上傳逐字稿：</label>
-        <textarea id="transcript" placeholder="貼上逐字稿..."></textarea>
-        <button id="clearTranscript">🗑️ 清除逐字稿</button>
+        <div class="transcript-wrapper">
+            <textarea id="transcript" placeholder="貼上逐字稿..."></textarea>
+            <button id="clearTranscript" title="清除逐字稿">🗑️</button>
+        </div>
 
         <audio id="audio" controls></audio>
 

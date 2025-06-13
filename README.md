@@ -6,6 +6,12 @@
 
 ---
 
+## 🚀 Live Demo
+
+👉 [EchoLoop](https://jason9075.github.io/EchoLoop/)
+
+---
+
 ## ✨ 特色功能
 
 - 🎵 上傳任意 MP3 音檔

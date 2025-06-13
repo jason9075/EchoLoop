@@ -5,10 +5,18 @@ const loopStart = document.getElementById("loopStart");
 const loopEnd = document.getElementById("loopEnd");
 const toggleLoop = document.getElementById("toggleLoop");
 const loopInfo = document.getElementById("loopInfo");
+const transcriptBox = document.getElementById("transcript");
 
 let markers = [];
 let loopInterval = null;
 let loopEnabled = false;
+
+window.addEventListener("DOMContentLoaded", () => {
+    const saved = localStorage.getItem("echoLoop_transcript");
+    if (saved) {
+        transcriptBox.value = saved;
+    }
+});
 
 document.getElementById("audioFile").addEventListener("change", (e) => {
     const file = e.target.files[0];
@@ -16,6 +24,15 @@ document.getElementById("audioFile").addEventListener("change", (e) => {
         const url = URL.createObjectURL(file);
         audio.src = url;
     }
+});
+
+document.getElementById("clearTranscript").addEventListener("click", () => {
+    transcriptBox.value = "";
+    localStorage.removeItem("echoLoop_transcript");
+});
+
+transcriptBox.addEventListener("input", () => {
+    localStorage.setItem("echoLoop_transcript", transcriptBox.value);
 });
 
 addMarkerBtn.addEventListener("click", () => {

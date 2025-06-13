@@ -1,0 +1,58 @@
+:root {
+  --nord0: #2e3440;
+  --nord1: #3b4252;
+  --nord4: #d8dee9;
+  --nord8: #88c0d0;
+  --nord11: #bf616a;
+}
+
+body {
+  background-color: var(--nord0);
+  color: var(--nord4);
+  font-family: sans-serif;
+  padding: 2rem;
+}
+
+.container {
+  max-width: 700px;
+  margin: auto;
+}
+
+textarea {
+  width: 100%;
+  height: 300px;
+  background: var(--nord1);
+  color: var(--nord4);
+  border: none;
+  padding: 1rem;
+  margin: 1rem 0;
+  resize: vertical;
+}
+
+#loopInfo {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  color: var(--nord8);
+}
+
+button {
+  background: var(--nord8);
+  color: var(--nord0);
+  border: none;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+select {
+  background: var(--nord1);
+  color: var(--nord4);
+  border: none;
+  padding: 0.4rem;
+  margin: 0.5rem;
+}
+
+ul {
+  padding-left: 1rem;
+}

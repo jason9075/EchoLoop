@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>English Practice Player</title>
+    <link rel="stylesheet" href="style/style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <h1>🎧 English Practice Player</h1>
+
+        <label>🎵 上傳 MP3 音檔：</label>
+        <input type="file" id="audioFile" accept="audio/mp3,audio/mpeg" />
+
+        <label>📜 上傳逐字稿：</label>
+        <textarea id="transcript" placeholder="貼上逐字稿..."></textarea>
+
+        <audio id="audio" controls></audio>
+
+        <div id="markers">
+            <button id="addMarker">➕ 新增標記</button>
+            <ul id="markerList"></ul>
+        </div>
+
+        <div class="loop-controls">
+            <div id="loopInfo"></div>
+            <label for="loopStart">🔁 循環開始：</label>
+            <select id="loopStart"></select>
+
+            <label for="loopEnd">結束：</label>
+            <select id="loopEnd"></select>
+
+            <button id="toggleLoop">啟用循環</button>
+        </div>
+
+        <div id="transcriptDisplay"></div>
+    </div>
+
+    <script src="script/player.js"></script>
+</body>
+
+</html>

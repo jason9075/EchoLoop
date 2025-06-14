@@ -57,6 +57,10 @@ ul {
   padding-left: 1rem;
 }
 
+.seek-controls button {
+  margin-right: 0.5rem;
+}
+
 .transcript-wrapper {
   position: relative;
   width: 100%;

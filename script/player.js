@@ -6,6 +6,9 @@ const loopEnd = document.getElementById("loopEnd");
 const toggleLoop = document.getElementById("toggleLoop");
 const loopInfo = document.getElementById("loopInfo");
 const transcriptBox = document.getElementById("transcript");
+const back5Btn = document.getElementById("back5");
+const forward5Btn = document.getElementById("forward5");
+const rewindLoopBtn = document.getElementById("rewindLoop");
 
 let markers = [];
 let loopInterval = null;
@@ -33,6 +36,32 @@ document.getElementById("clearTranscript").addEventListener("click", () => {
 
 transcriptBox.addEventListener("input", () => {
     localStorage.setItem("echoLoop_transcript", transcriptBox.value);
+});
+
+back5Btn.addEventListener("click", () => {
+    audio.currentTime = Math.max(0, audio.currentTime - 5);
+});
+
+forward5Btn.addEventListener("click", () => {
+    audio.currentTime = Math.min(audio.duration, audio.currentTime + 5);
+});
+
+rewindLoopBtn.addEventListener("click", () => {
+    const start = parseFloat(loopStart.value);
+    audio.currentTime = isNaN(start) ? 0 : start;
+});
+
+document.addEventListener("keydown", (e) => {
+    if (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA") {
+        return;
+    }
+    if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        audio.currentTime = Math.max(0, audio.currentTime - 5);
+    } else if (e.key === "ArrowRight") {
+        e.preventDefault();
+        audio.currentTime = Math.min(audio.duration, audio.currentTime + 5);
+    }
 });
 
 addMarkerBtn.addEventListener("click", () => {
